@@ -22,12 +22,6 @@ export default function App() {
       setIsLoading(true);
       setIsError(false);
 
-      if (movieTopic === "") {
-        setIsLoading(false);
-        toast.error("Please enter your search query.");
-        return;
-      }
-
       const responce = await fetchMovie(movieTopic);
       setIsLoading(false);
       if (responce.length === 0) {
